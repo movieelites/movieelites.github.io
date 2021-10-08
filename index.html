@@ -1,6 +1,10 @@
 <html>
 <body>
 Lets Test Start
+$.get("https://cors-anywhere.herokuapp.com/http://movieelites.orgfree.com/", function(data) {
+    var meta = $(data).filter('meta[name="description"]').attr("content");
+    console.log(meta)
+});
 <div id="target"></div>
 End
 </body>
