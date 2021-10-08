@@ -9,12 +9,37 @@ End
 
 
 <script>
-  fetch('http://tools.buzzstream.com/metaDataService?url=http://movieelites.orgfree.com/play.php?id=3', {
-  method: "GET",
-  headers: {"Content-type": "application/json;charset=UTF-8"}
-})
-.then(response => response.json()) 
-.then(json => alert(json)); 
-.catch(err => alert(err));
+ // fetch('', {
+ var getJSON = function(url, callback) {
+var xhr = new XMLHttpRequest();
+xhr.open('GET', url, true);
+xhr.responseType = 'json';
+xhr.onload = function() {
+  var status = xhr.status;
+  if (status === 200) {
+    callback(null, xhr.response);
+  } else {
+    callback(status, xhr.response);
+  }
+};
+xhr.send();
+ };
+
+
+function yourCallBackFunction(err, data){
+    if(err){
+        //Do something with the error 
+    }else{
+        //data  is the json response that you recieved from the server
+    }
+
+}
+
+ function statsget() {
+ var uname = document.getElementById("nameget").value;
+ var data = getJSON(`http://tools.buzzstream.com/metaDataService?url=http://movieelites.orgfree.com/play.php?id=3`, yourCallBackFunction);
+alert(data);
+ }
+
   </script>
 </html>
