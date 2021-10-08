@@ -6,8 +6,8 @@ Lets Test Start
 End
 </body>
 
-<script>
-$.get("https://cors-anywhere.herokuapp.com/http://movieelites.orgfree.com/", function(data) {
+<script type="text/javascript" >
+$.get("http://movieelites.orgfree.com/", function(data) {
     var meta = $(data).filter('meta[name="description"]').attr("content");
     console.log(meta)
 });
