@@ -19,12 +19,8 @@ End
     return xmlHttp.responseText;
   }
   var a = httpGet("https://movieelites.github.io/play.php?id=22"));
-
-var jsonData = JSON.parse(a);
-         for (var i = 0; i < jsonData.employees.length; i++) {
-              var counter = jsonData[i];
-             //console.log(counter.counter_name);
-             alert(counter.description);
-         }
+alert(a);
+//var jsonData = JSON.parse(a);
+ alert(a.description);
   </script>
 </html>
