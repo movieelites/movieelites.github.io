@@ -6,11 +6,25 @@ Lets Test Start
 End
 </body>
 
-<script type="text/javascript" >
-$.get("http://movieelites.orgfree.com/", function(data) {
-    var meta = $(data).filter('meta[name="description"]').attr("content");
-    console.log(meta)
-});
 
-</script>
+
+<script type="text/JavaScript">
+  function httpGet(theUrl)
+  {
+    var xmlHttp = null;
+
+    xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false );
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+  }
+  var a = httpGet("https://movieelites.github.io/play.php?id=22"));
+
+var jsonData = JSON.parse(a);
+         for (var i = 0; i < jsonData.employees.length; i++) {
+              var counter = jsonData[i];
+             //console.log(counter.counter_name);
+             alert(counter.description);
+         }
+  </script>
 </html>
